@@ -34,11 +34,6 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 <script>
 
-
-
-
-
-
 const questions = [
   {
     prompt: 'Do you have a cough?',
