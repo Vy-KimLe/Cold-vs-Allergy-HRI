@@ -144,14 +144,15 @@ document.querySelectorAll(`button[data-question="${questionIndex}"][data-choice=
 }
 
 .selected,
-    button:active {
-        background-color: darkgrey;
-        color: grey;
-    }
+button.selected,
+button.selected:active {
+    background-color: darkgrey !important;
+    color: white !important;
+}
 
-    button:hover {
-        background-color: lightgrey; 
-    }
+button:hover {
+    background-color: lightgrey; 
+}
 </style>
 
 
