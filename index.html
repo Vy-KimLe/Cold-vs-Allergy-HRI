@@ -68,7 +68,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 	</div>
 </div>
 	 
-<div class="page" id="two" style="display: none;">
+<div class="page" id="three" style="display: none;">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
@@ -80,7 +80,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <a href="#four" class="w3-button w3-white w3-border w3-border-aqua w3-round">Next</a>
 	</div>
 </div>
-	<div class="page" id="two" style="display: none;">
+	<div class="page" id="four" style="display: none;">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div> 
@@ -92,7 +92,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 	</div>
 </div>	
 	 
-<div class="page" id="two" style="display: none;">
+<div class="page" id="five" style="display: none;">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
@@ -100,9 +100,34 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Have you experienced chills recently?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#results" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="displayResults()">Get Results!</a>
+                <a href="#six" class="w3-button w3-white w3-border w3-border-aqua w3-round">Finish</a>
 	</div>
 </div>
+
+<div class="page" id="six"> 
+	<div class="w3-container w3-flat-carrot"> 
+		<h1>Results</h1> 
+	</div>
+	 <div id="content" class="w3-container">  
+		<a href="#seven" onclick="displayResult();" class="w3-button w3-white w3-border w3-border-aqua w3-round"> Get your results now!</a> 
+	</div>
+</div>
+	 
+<div class="page" id="seven"> 
+	<div class="w3-container w3-flat-carrot"> 
+		<h1>Results</h1> 
+	</div>
+	
+	<div id="content" class="w3-container">	  
+	    <p id="results"></p>
+	</div>
+</div>  
+	 <footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
+
 
 <script>
 
@@ -119,16 +144,17 @@ function handleAnswer(questionIndex, choiceIndex) { /* creating a function for t
   }
 }
 
-function displayResults() {
+ function displayResults() {
   console.log('Cold points:', coldPoints);
   console.log('Allergy points:', allergyPoints);
-
+  var resultDisplay = document.getElementById("results"); /* didnt know how else to call upon results on last page, so used variable */
+	
   if (coldPoints > allergyPoints) {
     console.log('You are likely experiencing symptoms of the cold.');
   } else if (allergyPoints > coldPoints) {
     console.log('You are likely experiencing symptoms of allergies.');
   } else {
-    console.log('It is difficult to determine the diagnosis based on your responses.');
+    console.log('It is difficult to determine the diagnosis based on your responses.'); 
   }
 }
 
