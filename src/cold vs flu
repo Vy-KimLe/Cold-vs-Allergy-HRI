@@ -24,7 +24,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Cold Vs Allergies</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -39,15 +39,6 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 
 
-
-
-
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
 const questions = [
   {
     prompt: 'Do you have a cough?',
