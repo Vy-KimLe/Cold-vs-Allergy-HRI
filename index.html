@@ -34,7 +34,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
  <div id="content" class="w3-container">
         <p>Are you feeling like you might have a cold but wonder if it is allergies? Answer a few short questions to find out!</p>
 
-        <a href="#one" class="w3-btn w3-grey w3-round" onclick="showQuestion('one')">Get Started</a> <!-- need to see how this looks before changing-->
+        <a href="#one" class="w3-btn w3-grey w3-round">Get Started</a> <!-- need to see how this looks before changing-->
 
         <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at
             Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code
@@ -51,7 +51,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Are your eyes watery or itchy?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#two" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('two')">Next</a>
+                <a href="#two" class="w3-button w3-white w3-border w3-border-aqua w3-round">Next</a>
             </div>
         </div>
 
@@ -64,7 +64,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Do you have a sore throat?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#three" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('three')">Next</a>
+                <a href="#three" class="w3-button w3-white w3-border w3-border-aqua w3-round">Next</a>
 	</div>
 </div>
 	 
@@ -77,7 +77,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Are your symptoms seasonal?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#four" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('four')">Next</a>
+                <a href="#four" class="w3-button w3-white w3-border w3-border-aqua w3-round">Next</a>
 	</div>
 </div>
 	<div class="page" id="two" style="display: none;">
@@ -88,7 +88,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Are your symptoms chronic?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#five" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('five')">Next</a>
+                <a href="#five" class="w3-button w3-white w3-border w3-border-aqua w3-round">Next</a>
 	</div>
 </div>	
 	 
@@ -100,7 +100,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
                 <p>Have you experienced chills recently?</p>
                 <button onclick="handleAnswer('yes')">Yes</button>
                 <button onclick="handleAnswer('no')">No</button>
-                <a href="#results" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('four')">Next</a>
+                <a href="#results" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="displayResults()">Get Results!</a>
 	</div>
 </div>
 
@@ -119,7 +119,18 @@ function handleAnswer(questionIndex, choiceIndex) { /* creating a function for t
   }
 }
 
+function displayResults() {
+  console.log('Cold points:', coldPoints);
+  console.log('Allergy points:', allergyPoints);
 
+  if (coldPoints > allergyPoints) {
+    console.log('You are likely experiencing symptoms of the cold.');
+  } else if (allergyPoints > coldPoints) {
+    console.log('You are likely experiencing symptoms of allergies.');
+  } else {
+    console.log('It is difficult to determine the diagnosis based on your responses.');
+  }
+}
 
 letcoldPoints = 0;
 letallergyPoints = 0;
