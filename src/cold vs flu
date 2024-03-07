@@ -34,17 +34,45 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 <script>
 
+letcoldPoints = 0;
+letallergyPoints = 0;
+
 const questions = [
   {
     question: 'Are your eyes watery and/or itchy?',
     choices: ['Yes', 'No'], /* unsure if i will add a maybe/i dont know answer for this question and the questions after*/
-    points: { cold: 0, allergies: 1}
+    points: { 
+coldforYes: 0  /* logic that accounts for points for both cold and allergies */
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
   },
 {
-    question: 'Do you have a sore throat?'
+    question: 'Do you have a sore throat?',
     choices: ['Yes', 'No'],
-    points: { cold: 0, allergies: 1}
+    points: {
+coldforYes: 0  
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
 },
 {
-    question: 
+    question: 'Are your symptoms seasonal?',
+    choices: ['Yes','No'],
+    points: { 
+coldforYes: 0  
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
+},
+{
+   question: 'Are your symptoms chronic?',
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1  
+allergiesforYes: 0
+coldforNo: 0
+allergiesforNo: 1
+},
+{
 
