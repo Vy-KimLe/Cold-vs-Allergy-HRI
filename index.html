@@ -93,8 +93,12 @@ function handleAnswer(questionIndex, choiceIndex) { /* creating a function for t
  const selectedChoice = questions[questionIndex].choices[choiceIndex];
   const points = questions[questionIndex].points;
   
-document.querySelectorAll(`button[data-question="${questionIndex}"][data-choice="${choiceIndex}"]`)
-        .forEach(button => button.classList.add('selected'));
+ document.querySelectorAll(`button[data-question="${questionIndex}"]`)
+        .forEach(button => button.classList.remove('selected'));
+
+    // Add 'selected' class to the clicked button
+    document.querySelector(`button[data-question="${questionIndex}"][data-choice="${choiceIndex}"]`)
+        .classList.add('selected');
 	
   if (selectedChoice === 'Yes') {
     coldPoints += points.coldForYes;
