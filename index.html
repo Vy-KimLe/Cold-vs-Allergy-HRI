@@ -89,16 +89,16 @@ allergiesforNo: 1,
 	}
    }
 ];
-function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
- const selectedChoice = questions[questionIndex].choices[choiceIndex];
+function handleAnswer(questionIndex, choiceIndex) {
+  const selectedChoice = questions[questionIndex].choices[choiceIndex];
   const points = questions[questionIndex].points;
-  
- document.querySelectorAll(`button[data-question="${questionIndex}"]`)
-        .forEach(button => button.classList.remove('selected'));
 
-    // Add 'selected' class to the clicked button
-    document.querySelector(`button[data-question="${questionIndex}"][data-choice="${choiceIndex}"]`)
-        .classList.add('selected');
+ 
+  document.querySelectorAll(`button[data-question="${questionIndex}"]`)
+    .forEach(button => button.classList.remove('selected'));
+
+  document.querySelector(`button[data-question="${questionIndex}"][data-choice="${choiceIndex}"]`)
+    .classList.add('selected');
 	
   if (selectedChoice === 'Yes') {
     coldPoints += points.coldForYes;
