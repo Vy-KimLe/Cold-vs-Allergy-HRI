@@ -113,7 +113,27 @@ allergiesforNo: 1
 </script>
 
 
+<style>	
+.body {
+     margin: 0em;
+}
 
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
 
 
 	
