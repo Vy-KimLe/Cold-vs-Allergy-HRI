@@ -33,7 +33,63 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 <script>
 
-function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
+
+letcoldPoints = 0;
+letallergyPoints = 0;
+
+const questions = [
+  {
+    question: 'Are your eyes watery and/or itchy?',
+    choices: ['Yes', 'No'], /* unsure if i will add a maybe/i dont know answer for this question and the questions after*/
+    points: { 
+coldforYes: 0,  /* logic that accounts for points for both cold and allergies */
+allergiesforYes: 1,
+coldforNo: 1,
+allergiesforNo: 0
+	}
+},
+{
+    question: 'Do you have a sore throat?',
+    choices: ['Yes', 'No'],
+    points: {
+coldforYes: 0, 
+allergiesforYes: 1,
+coldforNo: 1,
+allergiesforNo: 0
+    }
+},
+{
+    question: 'Are your symptoms seasonal?',
+    choices: ['Yes','No'],
+    points: { 
+coldforYes: 0,  
+allergiesforYes: 1,
+coldforNo: 1,
+allergiesforNo: 0
+    }
+},
+{
+   question: 'Are your symptoms chronic?',
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1,  
+allergiesforYes: 0,
+coldforNo: 0,
+allergiesforNo: 1
+   }
+},
+{
+question: 'Have you experienced chills recently?', /* might reword this question */
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1,  
+allergiesforYes: 0,
+coldforNo: 0,
+allergiesforNo: 1,
+	}
+   }
+];
+	function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
  const selectedChoice = questions[questionIndex].choices[choiceIndex];
   const points = questions[questionIndex].points;
 
@@ -59,61 +115,6 @@ function handleAnswer(questionIndex, choiceIndex) { /* creating a function for t
     console.log('It is difficult to determine the diagnosis based on your responses.'); 
   }
 }
-
-letcoldPoints = 0;
-letallergyPoints = 0;
-
-const questions = [
-  {
-    question: 'Are your eyes watery and/or itchy?',
-    choices: ['Yes', 'No'], /* unsure if i will add a maybe/i dont know answer for this question and the questions after*/
-    points: { 
-coldforYes: 0  /* logic that accounts for points for both cold and allergies */
-allergiesforYes: 1
-coldforNo: 1
-allergiesforNo: 0
-	}
-},
-{
-    question: 'Do you have a sore throat?',
-    choices: ['Yes', 'No'],
-    points: {
-coldforYes: 0  
-allergiesforYes: 1
-coldforNo: 1
-allergiesforNo: 0
-    }
-},
-{
-    question: 'Are your symptoms seasonal?',
-    choices: ['Yes','No'],
-    points: { 
-coldforYes: 0  
-allergiesforYes: 1
-coldforNo: 1
-allergiesforNo: 0
-    }
-},
-{
-   question: 'Are your symptoms chronic?',
-   choices: ['Yes, 'No']
-   points: {
-coldforYes: 1  
-allergiesforYes: 0
-coldforNo: 0
-allergiesforNo: 1
-   }
-},
-{
-question: 'Have you experienced chills recently?', /* might reword this question */
-   choices: ['Yes, 'No']
-   points: {
-coldforYes: 1  
-allergiesforYes: 0
-coldforNo: 0
-allergiesforNo: 1
-}
-},
 	
 </script>
 
