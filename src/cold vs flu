@@ -1,7 +1,6 @@
-import java.util.Scanner;
+const readline = require('readline');
 
-public class cold vs flu {
-
-public static void main(String[] args) {
-          Scanner scanner = new Scanner(System.in);
-
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
