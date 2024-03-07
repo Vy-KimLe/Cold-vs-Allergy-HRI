@@ -37,5 +37,11 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 const questions = [
   {
     prompt: 'Are your eyes watery and/or itchy?',
-    choices: ['Yes', 'No'] /* unsure if i will add a maybe/i dont know answer */
+    choices: ['Yes', 'No'], /* unsure if i will add a maybe/i dont know answer for this question and the questions after*/
+    points: { cold: 0, allergies: 1}
   },
+{
+    prompt: 'Do you have a sore throat?'
+    choices: ['Yes', 'No'],
+    points: { cold: 0, allergies: 1}
+
