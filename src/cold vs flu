@@ -36,6 +36,6 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 const questions = [
   {
-    prompt: 'Do you have a cough?',
-    choices: ['yes', 'no']
+    prompt: 'Are your eyes watery and/or itchy?',
+    choices: ['Yes', 'No'] /* unsure if i will add a maybe/i dont know answer */
   },
