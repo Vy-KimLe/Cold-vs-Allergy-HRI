@@ -34,7 +34,7 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
  <div id="content" class="w3-container">
         <p>Are you feeling like you might have a cold but wonder if it is allergies? Answer a few short questions to find out!</p>
 
-        <a href="#one" class="w3-btn w3-grey w3-round" onclick="showQuestion('one')">Get Started</a>
+        <a href="#one" class="w3-btn w3-grey w3-round" onclick="showQuestion('one')">Get Started</a> <!-- need to see how this looks before changing-->
 
         <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at
             Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code
@@ -42,7 +42,20 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
         <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+<div class="page" id="one" style="display: none;">
+            <div id="header" class="w3-container w3-flat-carrot">
+                <h1>Question 1</h1>
+            </div>
 
+            <div id="content" class="w3-container">
+                <p>Are your eyes watery or itchy?</p>
+                <button onclick="handleAnswer('yes')">Yes</button>
+                <button onclick="handleAnswer('no')">No</button>
+                <a href="#two" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('two')">Next</a>
+            </div>
+        </div>
+
+        <div class="page" id="two" style="display: none;">
 
 
 <script>
