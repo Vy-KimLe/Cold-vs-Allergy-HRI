@@ -1,9 +1,126 @@
-# HealthcareDiagnosis
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Vy Le 
+ 
+<!-- Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+The goal of this code is to give a possible brief diagnosis on allergies vs colds <!--added purpose of the app-->
+ 
+<!-- https://www.w3schools.com/w3css/default.asp-->
+<!--https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+   <head> 
+      <title>Cold Vs Allergies</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+<body>
+ <div id="content" class="w3-container">
+        <p>Are you feeling like you might have a cold but wonder if it is allergies? Answer a few short questions to find out!</p>
 
-## Design
+        <a href="#one" class="w3-btn w3-grey w3-round" onclick="showQuestion('one')">Get Started</a> <!-- need to see how this looks before changing-->
 
-Java program designed to query and recieve input of a patient's symptoms and diagnose a medical condition the aligns most accurately with reported symptoms.
+        <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at
+            Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code
+            does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
 
-## License
+        <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-[MIT](LICENSE)
+<div class="page" id="one" style="display: none;">
+            <div id="header" class="w3-container w3-flat-carrot">
+                <h1>Question 1</h1>
+            </div>
+
+            <div id="content" class="w3-container">
+                <p>Are your eyes watery or itchy?</p>
+                <button onclick="handleAnswer('yes')">Yes</button>
+                <button onclick="handleAnswer('no')">No</button>
+                <a href="#two" class="w3-button w3-white w3-border w3-border-aqua w3-round" onclick="showQuestion('two')">Next</a>
+            </div>
+        </div>
+
+        <div class="page" id="two" style="display: none;">
+
+
+<script>
+
+function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
+ const selectedChoice = questions[questionIndex].choices[choiceIndex];
+  const points = questions[questionIndex].points;
+
+  if (selectedChoice === 'Yes') {
+    coldPoints += points.coldForYes;
+    allergyPoints += points.allergiesForYes;
+  } else if (selectedChoice === 'No') {
+    coldPoints += points.coldForNo;
+    allergyPoints += points.allergiesForNo;
+  }
+}
+
+
+
+letcoldPoints = 0;
+letallergyPoints = 0;
+
+const questions = [
+  {
+    question: 'Are your eyes watery and/or itchy?',
+    choices: ['Yes', 'No'], /* unsure if i will add a maybe/i dont know answer for this question and the questions after*/
+    points: { 
+coldforYes: 0  /* logic that accounts for points for both cold and allergies */
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
+  },
+{
+    question: 'Do you have a sore throat?',
+    choices: ['Yes', 'No'],
+    points: {
+coldforYes: 0  
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
+},
+{
+    question: 'Are your symptoms seasonal?',
+    choices: ['Yes','No'],
+    points: { 
+coldforYes: 0  
+allergiesforYes: 1
+coldforNo: 1
+allergiesforNo: 0
+},
+{
+   question: 'Are your symptoms chronic?',
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1  
+allergiesforYes: 0
+coldforNo: 0
+allergiesforNo: 1
+},
+{
+question: 'Have you experienced chills recently?', /* might reword this question */
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1  
+allergiesforYes: 0
+coldforNo: 0
+allergiesforNo: 1
+},
