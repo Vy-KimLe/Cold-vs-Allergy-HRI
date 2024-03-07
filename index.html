@@ -92,7 +92,10 @@ allergiesforNo: 1,
 function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
  const selectedChoice = questions[questionIndex].choices[choiceIndex];
   const points = questions[questionIndex].points;
-
+  
+document.querySelectorAll(`button[data-question="${questionIndex}"][data-choice="${choiceIndex}"]`)
+        .forEach(button => button.classList.add('selected'));
+	
   if (selectedChoice === 'Yes') {
     coldPoints += points.coldForYes;
     allergyPoints += points.allergiesForYes;
