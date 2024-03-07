@@ -108,11 +108,11 @@ allergiesforNo: 1,
   var resultDisplay = document.getElementById("results"); /* didnt know how else to call upon results on last page, so used variable */
 	
   if (coldPoints > allergyPoints) {
-    console.log('You are likely experiencing symptoms of the cold.');
+    resultDisplay.textContent = 'You are likely experiencing symptoms of the cold.';
   } else if (allergyPoints > coldPoints) {
-    console.log('You are likely experiencing symptoms of allergies.');
+    resultDisplay.textContent = 'You are likely experiencing symptoms of allergies.';
   } else {
-    console.log('It is difficult to determine the diagnosis based on your responses.'); 
+    resultDisplay.textContent ='It is difficult to determine the diagnosis based on your responses.'; 
   }
 }
 	
