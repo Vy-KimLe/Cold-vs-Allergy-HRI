@@ -34,6 +34,21 @@ The goal of this code is to give a possible brief diagnosis on allergies vs cold
 
 <script>
 
+function handleAnswer(questionIndex, choiceIndex) { /* creating a function for the answer choices and tallying up points, here questionindex and choiceindex are the arguments, might make it more clear instead of just using question and choices as seen below
+ const selectedChoice = questions[questionIndex].choices[choiceIndex];
+  const points = questions[questionIndex].points;
+
+  if (selectedChoice === 'Yes') {
+    coldPoints += points.coldForYes;
+    allergyPoints += points.allergiesForYes;
+  } else if (selectedChoice === 'No') {
+    coldPoints += points.coldForNo;
+    allergyPoints += points.allergiesForNo;
+  }
+}
+
+
+
 letcoldPoints = 0;
 letallergyPoints = 0;
 
@@ -75,4 +90,11 @@ coldforNo: 0
 allergiesforNo: 1
 },
 {
-
+question: 'Have you experienced chills recently?', /* might reword this question */
+   choices: ['Yes, 'No']
+   points: {
+coldforYes: 1  
+allergiesforYes: 0
+coldforNo: 0
+allergiesforNo: 1
+},
