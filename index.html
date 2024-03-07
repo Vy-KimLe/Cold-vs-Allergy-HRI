@@ -143,9 +143,14 @@ document.querySelectorAll(`button[data-question="${questionIndex}"][data-choice=
     z-index: 1;
 }
 
-.selected {
-  background-color: darkgrey; 
- color: white; 
+.selected,
+    button:active {
+        background-color: darkgrey;
+        color: white;
+    }
+
+    button:hover {
+        background-color: lightgrey; 
     }
 </style>
 
