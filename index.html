@@ -93,7 +93,8 @@ function handleAnswer(questionIndex, choiceIndex) {
   const selectedChoice = questions[questionIndex].choices[choiceIndex];
   const points = questions[questionIndex].points;
 
- 
+ selectedAnswers[questionIndex] = selectedChoice;
+	
   document.querySelectorAll(`button[data-question="${questionIndex}"]`)
     .forEach(button => button.classList.remove('selected'));
 
